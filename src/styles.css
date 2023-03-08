@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body{
+    padding: 20px;
+}
+
+span {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.span-red {
+    background-color: red;
+}
+
+.span-green {
+    background-color: green;
+}

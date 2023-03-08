@@ -1,0 +1,21 @@
+<div class="zippy">
+  <div class="zippy-heading" [class.expanded]="isExpanded" (click)="toggle()">
+    {{ title }}
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="30"
+      height="30"
+      fill="currentColor"
+      class="bi bi-chevron-up"
+      viewBox="0 0 20 20"
+    >
+      <path
+        fill-rule="evenodd"
+        [attr.d]="isExpanded ? upChevron : downChevron"
+      />
+    </svg>
+  </div>
+  <div *ngIf="isExpanded" class="zippy-body">
+    <ng-content></ng-content>
+  </div>
+</div>

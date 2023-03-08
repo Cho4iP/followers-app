@@ -1,0 +1,8 @@
+<input
+  type="text"
+  [value]="_value"
+  [(ngModel)]="_value"
+  #text
+  (keyup.enter)="_value = text.value; onKeyUp()"
+/>
+<!--[(ngModel)]="_value" Tow-way Binding with the _value field-->

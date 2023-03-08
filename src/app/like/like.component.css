@@ -1,0 +1,8 @@
+svg {
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.active {
+    fill: deeppink;
+}

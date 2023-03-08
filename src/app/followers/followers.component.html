@@ -1,0 +1,25 @@
+<h2>Mosh's GitHup Followers</h2>
+
+<ul class="list-group">
+  <li *ngFor="let follower of followers" class="list-group-item">
+    <img class="avatar" [src]="follower.avatar_url" alt="avatar" />
+    <a [routerLink]="['/profile', follower.login, follower.id]"
+      ><h4 class="mr-5">{{ follower.login }}</h4></a
+    >
+    <a class="mr-5" [href]="follower.html_url">{{ follower.html_url }}</a>
+  </li>
+</ul>
+
+<!--
+<div *ngFor="let follower of followers">
+  <div>
+    <a href="">
+      <img [src]="follower.avatar_url" alt="" class="avatar" />
+    </a>
+  </div>
+  <div>
+    <h4>{{ follower.login }}</h4>
+    <a class="" [href]="follower.html_url">{{ follower.html_url }}</a>
+  </div>
+</div>
+-->

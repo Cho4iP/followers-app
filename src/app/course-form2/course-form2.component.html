@@ -1,0 +1,56 @@
+<form [formGroup]="form">
+  <div class="mb-3">
+    <label for="name" class="form-label">Course Name</label>
+    <input
+      formControlName="name"
+      name="name"
+      type="text"
+      class="form-control"
+      id="name"
+    />
+    <div *ngIf="name?.touched && name?.invalid" class="alert alert-danger mt-1">
+      <div *ngIf="name?.errors?.['required']">Course Name is Required</div>
+      <div *ngIf="name?.errors?.['minlength']">
+        Course Name should be minimum 5 Characters
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <select
+      formControlName="category"
+      name="category"
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option selected></option>
+      <option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </option>
+    </select>
+    <div
+      *ngIf="category?.touched && category?.invalid"
+      class="alert alert-danger mt-1"
+    >
+      <div>Category is Required</div>
+    </div>
+  </div>
+
+  <div class="mb-3 form-check">
+    <input
+      formControlName="guarantee"
+      name="guarantee"
+      type="checkbox"
+      class="form-check-input"
+      id="guarantee"
+    />
+    <label class="form-check-label" for="guarantee"
+      >30-Day Many-Back Guarantee</label
+    >
+  </div>
+
+  <p>{{ form.value | json }}</p>
+
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
